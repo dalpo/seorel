@@ -7,9 +7,9 @@ require "seorel/version"
 Gem::Specification.new do |s|
   s.name        = "seorel"
   s.version     = Seorel::VERSION
-  s.authors     = ["TODO: Your name"]
-  s.email       = ["TODO: Your email"]
-  s.homepage    = "TODO"
+  s.authors     = ["Andrea Dal Ponte"]
+  s.email       = ["info@andreadalponte.com"]
+  s.homepage    = "https://github.com/dalpo/seorel"
   s.summary     = "TODO: Summary of Seorel."
   s.description = "TODO: Description of Seorel."
 
