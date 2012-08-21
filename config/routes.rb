@@ -1,2 +1,2 @@
-Seorel::Engine.routes.draw do
-end
+# Seorel::Engine.routes.draw do
+# end
