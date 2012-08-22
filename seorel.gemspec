@@ -10,8 +10,8 @@ Gem::Specification.new do |s|
   s.authors     = ["Andrea Dal Ponte"]
   s.email       = ["info@andreadalponte.com"]
   s.homepage    = "https://github.com/dalpo/seorel"
-  s.summary     = "TODO: Summary of Seorel."
-  s.description = "TODO: Description of Seorel."
+  s.summary     = "Seorel: SEO Meta tags plugin for Ruby on Rails"
+  s.description = "Seorel: SEO Meta tags plugin for Ruby on Rails"
 
   s.files = Dir["{app,config,db,lib}/**/*"] + ["MIT-LICENSE", "Rakefile", "README.rdoc"]
   s.test_files = Dir["test/**/*"]
