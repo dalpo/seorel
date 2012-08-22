@@ -1,3 +1,23 @@
 = Seorel
 
+SEO Polymorphic Relation Engine
+
+== Installation
+
+  gem 'seorel', github: 'dalpo/seorel'
+
+  bundle install
+
+  bundle exec rake seorel:install:migrations 
+
+  bundle exec rake db:migrate
+
+== Extending models
+
+  class Post < ActiveRecord::Base
+    extend Seorel
+    seorel :title
+  end
+
+
 This project rocks and uses MIT-LICENSE.

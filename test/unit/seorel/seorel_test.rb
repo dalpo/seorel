@@ -1,7 +1,7 @@
 require 'test_helper'
 
 module Seorel
-  class SeoContentTest < ActiveSupport::TestCase
+  class SeorelTest < ActiveSupport::TestCase
     # test "the truth" do
     #   assert true
     # end

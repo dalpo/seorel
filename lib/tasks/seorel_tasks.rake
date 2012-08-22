@@ -1,4 +1,10 @@
-# desc "Explaining what the task does"
-# task :seorel do
-#   # Task goes here
-# end
+# encoding: utf-8
+namespace :seorel do
+  
+  desc "Seorel installation"
+  task install: [:environment] do
+    # Task goes here
+    puts "Coming soon..."
+  end
+
+end
