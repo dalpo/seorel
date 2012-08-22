@@ -1,6 +1,6 @@
 = Seorel
 
-SEO Polymorphic Relation Engine
+SEO Meta Engine for Ruby on Rails
 
 == Installation
 
