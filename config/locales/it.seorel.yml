@@ -1,0 +1,16 @@
+it:
+  activerecord:
+    model:
+      seorel: SEO
+
+    attributes:
+      seorel:
+        title: Meta title
+        desciption: Meta description
+
+  attributes:
+    seorel: SEO
+
+  seorel:
+    admin:
+      label: "Opzioni avanzate"
