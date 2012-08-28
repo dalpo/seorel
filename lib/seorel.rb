@@ -6,7 +6,7 @@ require "seorel/class_methods"
 
 module Seorel
 
-  def self.extended(mod)
+  def self.extended(model_class)
     return if model_class.respond_to? :seorel
 
     model_class.instance_eval do
