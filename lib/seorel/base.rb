@@ -10,10 +10,12 @@ module Seorel
       has_one :seorel, as: :seorelable, dependent: :destroy, class_name: 'Seorel::Seorel'
       accepts_nested_attributes_for :seorel, allow_destroy: false
 
-      after_initialize :build_seorel, unless: :seorel?
+      after_save :build_seorel, unless: :seorel?
       before_save :set_empty_fields
 
       attr_accessible :seorel_attributes
+
+      # default_scope includes(:seorel)
     end
 
   end
