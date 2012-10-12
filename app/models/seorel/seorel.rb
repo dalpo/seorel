@@ -1,6 +1,6 @@
 module Seorel
   class Seorel < ActiveRecord::Base
-    
+
     belongs_to :seorelable, polymorphic: true
     attr_accessible :description, :title
 
@@ -10,6 +10,10 @@ module Seorel
 
     def admin_label
       I18n.t("seorel.admin.label")
+    end
+
+    rails_admin do
+      visible false
     end
 
   end
