@@ -12,9 +12,5 @@ module Seorel
       I18n.t("seorel.admin.label")
     end
 
-    rails_admin do
-      visible false
-    end
-
   end
 end

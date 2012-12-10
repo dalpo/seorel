@@ -7,7 +7,7 @@ class CreateSeorelSeorels < ActiveRecord::Migration
 
       t.timestamps
     end
-    
+
     add_index :seorel_seorels, :seorelable_id
     add_index :seorel_seorels, :seorelable_type
     add_index :seorel_seorels, [:seorelable_id, :seorelable_type]
