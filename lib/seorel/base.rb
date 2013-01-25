@@ -13,6 +13,8 @@ module Seorel
       after_save :build_seorel, unless: :seorel?
       before_save :set_empty_fields
 
+      delegate :title, :description, to: :seorel, prefix: :seo, allow_nil: true
+
       attr_accessible :seorel_attributes
 
       # default_scope includes(:seorel)
