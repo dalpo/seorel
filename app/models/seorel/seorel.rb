@@ -5,11 +5,15 @@ module Seorel
 
     mount_uploader :image, Seorel::ImageUploader
 
-    attr_accessible :description, :title, :image, :image_cache, :remove_image
+    attr_accessible :title, :description, :image, :image_cache, :remove_image
 
-    # def new_record?
-    #   false
-    # end
+    def title?
+      self.title.present?
+    end
+
+    def description?
+      self.description.present?
+    end
 
     def admin_label
       I18n.t("seorel.admin.label")

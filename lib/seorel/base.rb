@@ -17,7 +17,7 @@ module Seorel
       after_initialize :set_seorel_default_values
       before_save :set_seorel_default_values
 
-      delegate :title, :description, :image, :image?, to: :seorel, prefix: :seo, allow_nil: true
+      delegate :title, :title?, :description, :description?, :image, :image?, to: :seorel, prefix: :seo, allow_nil: true
 
       attr_accessible :seorel_attributes
     end
