@@ -6,18 +6,16 @@ module Seorel
       end
 
       def set_seorel_default_values
-        if seorel_default_value?
-          self.seorel.title ||= seorel_default_value
-          self.seorel.description ||= seorel_default_value
-        end
+        self.seorel.title = self.seorel_base_value if self.seorel.title.blank?
+        self.seorel.description = self.seorel_base_value if self.seorel.description.blank?
       end
 
-      def seorel_default_value
-        self.send @seorel_base_field if seorel_default_value?
+      def seorel_base_value
+        self.send self.class.seorel_base_field
       end
 
       def seorel_default_value?
-        @seorel_base_field.present?
+        self.class.seorel_base_field.present?
       end
     end
   end

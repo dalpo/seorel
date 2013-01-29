@@ -5,7 +5,6 @@ require "seorel/class_methods"
 # require "seorel/rails_admin"
 
 module Seorel
-
   def self.extended(model_class)
     return if model_class.respond_to? :seorel
 
@@ -13,5 +12,4 @@ module Seorel
       extend Base
     end
   end
-
 end
