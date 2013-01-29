@@ -2,7 +2,10 @@ module Seorel
   class Seorel < ActiveRecord::Base
 
     belongs_to :seorelable, polymorphic: true
-    attr_accessible :description, :title
+
+    mount_uploader :image, Seorel::ImageUploader
+
+    attr_accessible :description, :title, :image
 
     def new_record?
       false

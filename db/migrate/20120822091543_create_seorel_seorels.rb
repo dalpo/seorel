@@ -3,6 +3,7 @@ class CreateSeorelSeorels < ActiveRecord::Migration
     create_table :seorel_seorels do |t|
       t.string :title
       t.string :description
+      t.string :image
       t.references :seorelable, polymorphic: true
 
       t.timestamps
