@@ -1,16 +1,17 @@
 it:
   activerecord:
     model:
-      seorel: SEO
+      seorel/seorel: SEO
 
     attributes:
-      seorel:
+      seorel/seorel:
         title: Meta title
-        desciption: Meta description
+        description: Meta description
+        image: Immagine share
 
   attributes:
     seorel: SEO
 
   seorel:
     admin:
-      label: "Opzioni avanzate"
+      label: Meta tags

@@ -11,9 +11,9 @@ module Seorel
       accepts_nested_attributes_for :seorel, allow_destroy: false
 
       after_save :build_seorel, unless: :seorel?
-      before_save :set_empty_fields
+      before_save :set_seorel_default_values
 
-      delegate :title, :description, to: :seorel, prefix: :seo, allow_nil: true
+      delegate :title, :description, :image, :image?, to: :seorel, prefix: :seo, allow_nil: true
 
       attr_accessible :seorel_attributes
 

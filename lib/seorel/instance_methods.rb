@@ -2,10 +2,10 @@ module Seorel
   module Base
     module InstanceMethods
       def seorel?
-        self.seorel.present?
+        self.try(:seorel).present?
       end
 
-      def set_empty_fields
+      def set_seorel_default_values
         if seorel_default_value?
           self.seorel.title ||= seorel_default_value
           self.seorel.description ||= seorel_default_value
