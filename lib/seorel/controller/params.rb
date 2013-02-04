@@ -10,19 +10,23 @@ module Seorel
       config_accessor :image
 
       def full_title
-        [Seorel.config.prepend_title, self.title, Seorel.config.append_title].compact.join
+        [default_options.prepend_title, self.title, default_options.append_title].compact.join
       end
 
       def title
-        self.config.title || Seorel.config.default_title
+        config.title || default_options.default_title
       end
 
       def description
-        self.config.description || Seorel.config.default_description
+        config.description || default_options.default_description
       end
 
       def image
-        self.config.image || Seorel.config.default_image
+        config.image || default_options.default_image
+      end
+
+      def default_options
+        ::Seorel.config
       end
 
     end
