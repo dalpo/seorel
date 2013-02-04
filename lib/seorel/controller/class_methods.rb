@@ -2,7 +2,7 @@ module Seorel
   module Controller
     module ClassMethods
 
-      def add_meta(values = {})
+      def add_seorel_meta(values = {})
         class_name = self.name
 
         before_filter options do |controller|

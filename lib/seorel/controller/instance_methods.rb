@@ -20,7 +20,7 @@ module Seorel
         seosel_metatags = {
           title: model.seo_title,
           description: model.seo_description,
-          image: model.seo_image.default.url
+          image: model.seo_image.default.url rescue nil
         }
       end
 
