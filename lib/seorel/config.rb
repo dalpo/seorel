@@ -17,6 +17,7 @@ module Seorel
   # need a Class for 3.0
   class Configuration #:nodoc:
     include ActiveSupport::Configurable
+
     config_accessor :default_title
     config_accessor :default_description
     config_accessor :default_image

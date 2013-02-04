@@ -1,0 +1,8 @@
+Description:
+    Copies Seorel configuration file to your application's initializer directory.
+
+Example:
+    rails generate seorel:config
+
+    This will create:
+        config/initializers/seorel_config.rb

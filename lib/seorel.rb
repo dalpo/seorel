@@ -1,6 +1,9 @@
 module Seorel
 end
 
+###
+# Load Seorel components
+
 require 'seorel/config'
 
 require "seorel/engine"
