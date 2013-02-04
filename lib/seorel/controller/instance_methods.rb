@@ -13,23 +13,21 @@ module Seorel
       end
 
       def add_seorel_hash(values = {})
-        seosel_metatags = values
+        seorel_params.title = values[:title] if values[:title].present?
+        seorel_params.description = values[:description] if values[:description].present?
+        seorel_params.image = values[:image] if values[:image].present?
+        seorel_params
       end
 
       def add_seorel_model(model)
-        seosel_metatags = {
-          title: model.seo_title,
-          description: model.seo_description,
-          image: (model.seo_image.default.url rescue nil)
-        }
+        seorel_params.title = model.seo_title
+        seorel_params.description = model.seo_description
+        seorel_params.image = model.seo_image.default.url if model.seo_image?
+        seorel_params
       end
 
-      def seosel_metatags
-        @seosel_metatags ||= {}
-      end
-
-      def seosel_metatags=(values = {})
-        @seosel_metatags = seosel_metatags.merge(values)
+      def seorel_params
+        @seosel_metatags ||= ::Seorel::Controller::Params.new
       end
 
     end
