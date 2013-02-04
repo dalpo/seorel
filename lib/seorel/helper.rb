@@ -7,7 +7,7 @@ module Seorel
       metas+= render_description
       metas+= render_open_graph
       metas+= render_twitter_cards
-      metas
+      metas.html_safe
     end
 
     def render_title
@@ -25,7 +25,7 @@ module Seorel
       metas+= content_tag :meta, nil, name: 'og:description', content: seorel_params.description
       metas+= content_tag :meta, nil, name: 'og:image', content: seorel_params.image
       metas+= content_tag :meta, nil, name: 'og:locale', content: I18n.locale.to_s
-      metas
+      metas.html_safe
     end
 
     def render_twitter_cards
@@ -35,7 +35,7 @@ module Seorel
       metas+= content_tag :meta, nil, name: 'twitter:title', content: seorel_params.full_title
       metas+= content_tag :meta, nil, name: 'twitter:description', content: seorel_params.description
       metas+= content_tag :meta, nil, name: 'twitter:image', content: seorel_params.image
-      metas
+      metas.html_safe
     end
 
   end
