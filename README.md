@@ -82,7 +82,7 @@ end
 
 ## Views
 
-In your layout &lt;head&gt;&lt;/head&gt; section just call the paginate helper:
+In your layout &lt;head&gt;&lt;/head&gt; section just call the `render_meta_tags` helper:
 
 ```ruby
 <%=render_meta_tags %>
