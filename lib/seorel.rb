@@ -1,3 +1,8 @@
+module Seorel
+end
+
+require 'seorel/config'
+
 require "seorel/engine"
 
 require "seorel/model/base"
@@ -8,6 +13,3 @@ require "seorel/controller/instance_methods"
 require "seorel/controller/class_methods"
 
 require "seorel/seorelify"
-
-module Seorel
-end
