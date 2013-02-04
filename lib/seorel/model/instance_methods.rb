@@ -7,6 +7,7 @@ module Seorel
       end
 
       def set_seorel_default_values
+        self.build_seorel unless self.seorel?
         self.seorel.title = self.seorel_base_value if self.seorel.title.blank?
         self.seorel.description = self.seorel_base_value if self.seorel.description.blank?
       end
