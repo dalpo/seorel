@@ -1,6 +1,7 @@
 module Seorel
-  module Base
+  module Model
     module InstanceMethods
+
       def seorel?
         self.try(:seorel).present?
       end
@@ -17,6 +18,7 @@ module Seorel
       def seorel_default_value?
         self.class.seorel_base_field.present?
       end
+
     end
   end
 end
