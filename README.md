@@ -88,5 +88,17 @@ In your layout &lt;head&gt;&lt;/head&gt; section just call the `render_meta_tags
 <%=render_meta_tags %>
 ```
 
+## Contributing
+Submitting a Pull Request:
 
-### This project rocks and uses MIT-LICENSE.
+1. [Fork the repository.][fork]
+2. [Create a topic branch.][branch]
+3. Implement your feature or bug fix.
+4. Add, commit, and push your changes.
+5. [Submit a pull request.][pr]
+
+[fork]: http://help.github.com/fork-a-repo/
+[branch]: http://learn.github.com/p/branching.html
+[pr]: http://help.github.com/send-pull-requests/
+
+## This project rocks and uses MIT-LICENSE.
