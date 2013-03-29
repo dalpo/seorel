@@ -11,7 +11,6 @@ module Seorel
         ActionController::Base.send :helper_method, :seorel_params
 
         ActionView::Base.send :include, ::Seorel::Helper
-
       end
     end
 

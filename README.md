@@ -52,7 +52,7 @@ end
 
 
 ## Controllers
-In your controllers you may add\_seorel\_meta either like a before\_filter or within a method.
+In your controllers you may add\_metatags either like a before\_filter or within a method.
 
 ```ruby
 class PostsController < ApplicationController
@@ -60,7 +60,7 @@ class PostsController < ApplicationController
   def index
     ###
     # Custom meta tags
-    add_seorel_meta({
+    add_metatags({
       title: 'My custom meta title',
       description: 'My custom meta description'
     })
@@ -72,7 +72,7 @@ class PostsController < ApplicationController
     @post = Post.find(params[:id])
     ###
     # Extract meta tags info from your Seorelified Model
-    add_seorel_meta(@post)
+    add_metatags(@post)
 
     ...
   end

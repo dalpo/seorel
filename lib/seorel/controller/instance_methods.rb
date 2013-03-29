@@ -30,6 +30,12 @@ module Seorel
         @seosel_metatags ||= ::Seorel::Controller::Params.new
       end
 
+      def self.included(klass)
+        return if klass.respond_to? :add_metatags
+        alias_method :add_metatags, :add_seorel_meta
+        protected :add_seorel_meta, :add_seorel_hash, :add_seorel_model, :seorel_params
+      end
+
     end
   end
 end
