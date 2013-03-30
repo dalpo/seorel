@@ -1,8 +1,8 @@
 # Seorel
 
-SEO Meta Engine for Ruby on Rails
+SEO Metatags plugins for ActiveRecord models
 
-## Quick setup
+## Rails Setup
 
 
 `Gemfile.rb`:
@@ -13,7 +13,7 @@ gem 'seorel', github: 'dalpo/seorel'
 
 `Console`:
 ```bash
-% bundle
+% bundle install
 % bundle exec rake seorel:install:migrations
 % bundle exec rake db:migrate
 ```
@@ -24,7 +24,7 @@ gem 'seorel', github: 'dalpo/seorel'
 % rails generate seorel:config
 ```
 
-Will generate the `seorel_config.rb` initializer:
+Will generate the `seorel_config.rb` initializer to customize the default values:
 
 ```ruby
 Seorel.configure do |config|
@@ -37,21 +37,34 @@ end
 ```
 
 
-# Example
+## Usage
 
-## Extending model
+### Extending model
 
+For instance generate a post model:
+```ruby
+rails generate model post title:string description:text, publish_date:date
+```
+
+Edit `app/models/post.rb`:
 ```ruby
 class Post < ActiveRecord::Base
 
   extend Seorelify
-  seorelify :title
+  seorelify title: :customized_title, description: :description
+
+  def customized_title
+    "THE BLOG: #{self.title}"
+  end
 
 end
 ```
 
+This will use the `customized_title` and the `description` methods as references to generate automatically the related metatags.
+Note that the title and description will be sanitized from HTML and truncated to 255 characters.
 
-## Controllers
+
+### Controllers
 In your controllers you may add\_metatags either like a before\_filter or within a method.
 
 ```ruby
@@ -80,13 +93,14 @@ class PostsController < ApplicationController
 end
 ```
 
-## Views
+### Views
 
 In your layout &lt;head&gt;&lt;/head&gt; section just call the `render_meta_tags` helper:
 
 ```ruby
 <%=render_meta_tags %>
 ```
+
 
 ## Contributing
 Submitting a Pull Request:
