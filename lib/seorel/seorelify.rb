@@ -1,3 +1,4 @@
+# encoding: utf-8
 module Seorelify
 
   def self.extended(model_class)

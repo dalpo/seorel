@@ -1,3 +1,4 @@
+# encoding: utf-8
 module Seorel
   class ConfigGenerator < Rails::Generators::Base
 

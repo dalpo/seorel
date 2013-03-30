@@ -1,3 +1,4 @@
+# encoding: utf-8
 module Seorel
   class Seorel < ActiveRecord::Base
 

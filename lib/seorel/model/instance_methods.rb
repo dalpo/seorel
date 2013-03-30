@@ -1,3 +1,4 @@
+# encoding: utf-8
 module Seorel
   module Model
     module InstanceMethods
@@ -8,12 +9,17 @@ module Seorel
 
       def set_seorel_default_values
         self.build_seorel unless self.seorel?
-        self.seorel.title = self.seorel_base_value if self.seorel.title.blank?
-        self.seorel.description = self.seorel_base_value if self.seorel.description.blank?
+
+        self.seorel.title       = self.seorel_title_value       if self.seorel_title_value.present?
+        self.seorel.description = self.seorel_description_value if self.seorel_description_value.present?
       end
 
-      def seorel_base_value
-        self.send self.class.seorel_base_field
+      def seorel_title_value
+        self.class.seorel_title_field && self.send(self.class.seorel_title_field)
+      end
+
+      def seorel_description_value
+        self.class.seorel_description_field && self.send(self.class.seorel_description_field)
       end
 
       def seorel_default_value?
