@@ -6,8 +6,6 @@ module Seorel
 
     mount_uploader :image, Seorel::ImageUploader
 
-    attr_accessible :title, :description, :image, :image_cache, :remove_image
-
     def title?
       self.title.present?
     end
