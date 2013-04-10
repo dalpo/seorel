@@ -1,6 +1,6 @@
 # Seorel
 
-SEO Metatags plugins for ActiveRecord models
+Ruby on Rails SEO Metatags plugins for ActiveRecord models
 
 ## Rails Setup
 
