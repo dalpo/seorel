@@ -4,12 +4,7 @@ module Seorel
 
     belongs_to :seorelable, polymorphic: true
 
-    mount_uploader :image, Seorel::ImageUploader
-
-    before_save do
-      self.title = ::ActionController::Base.helpers.strip_tags(self.title).first(255) if self.title?
-      self.description = ::ActionController::Base.helpers.strip_tags(self.description).first(255) if self.description?
-    end
+    # mount_uploader :image, Seorel::ImageUploader
 
     def title?
       self.title.present?
