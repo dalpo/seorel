@@ -10,8 +10,8 @@ module Seorel
       def set_seorel_default_values
         self.build_seorel unless self.seorel?
 
-        self.seorel.title       = self.seorel_title_value       if self.seorel_title_value.present?
-        self.seorel.description = self.seorel_description_value if self.seorel_description_value.present?
+        self.seorel.title       = self.seorel_title_value       unless self.seo_title?
+        self.seorel.description = self.seorel_description_value unless self.seo_description?
       end
 
       def seorel_title_value
