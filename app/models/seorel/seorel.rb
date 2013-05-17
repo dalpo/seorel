@@ -2,7 +2,7 @@
 module Seorel
   class Seorel < ActiveRecord::Base
 
-    belongs_to :seorelable, polymorphic: true
+    belongs_to :seorelable, polymorphic: true, touch: true
 
     # mount_uploader :image, Seorel::ImageUploader
 
