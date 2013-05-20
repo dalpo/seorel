@@ -18,5 +18,9 @@ module Seorel
       I18n.t("seorel.admin.label")
     end
 
+    def image?
+      false
+    end
+
   end
 end
