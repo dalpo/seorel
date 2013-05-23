@@ -4,7 +4,6 @@ require 'active_support/configurable'
 module Seorel
   module Controller
     class Params
-
       include ActiveSupport::Configurable
 
       config_accessor :title
@@ -30,7 +29,6 @@ module Seorel
       def default_options
         ::Seorel.config
       end
-
     end
   end
 end

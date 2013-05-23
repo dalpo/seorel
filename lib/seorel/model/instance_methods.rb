@@ -16,12 +16,12 @@ module Seorel
 
       def seorel_title_value
         raw_title = self.class.seorel_title_field && self.send(self.class.seorel_title_field)
-        ::ActionController::Base.helpers.strip_tags(raw_title).first(255)
+        ::ActionController::Base.helpers.strip_tags(raw_title.to_s).first(255)
       end
 
       def seorel_description_value
         raw_description = self.class.seorel_description_field && self.send(self.class.seorel_description_field)
-        ::ActionController::Base.helpers.strip_tags(raw_description).first(255)
+        ::ActionController::Base.helpers.strip_tags(raw_description.to_s).first(255)
       end
 
       def seorel_default_value?
