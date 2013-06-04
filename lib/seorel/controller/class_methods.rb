@@ -11,14 +11,6 @@ module Seorel
         end
       end
 
-      def add_metatags(values = {})
-        class_name = self.name
-
-        before_filter options do |controller|
-          controller.send :add_meta, values
-        end
-      end
-
     end
   end
 end
