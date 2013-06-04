@@ -4,8 +4,6 @@ module Seorel
 
     belongs_to :seorelable, polymorphic: true, touch: true
 
-    # mount_uploader :image, Seorel::ImageUploader
-
     def title?
       self.title.present?
     end

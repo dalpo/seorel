@@ -24,6 +24,7 @@ module Seorel
     config_accessor :default_image
     config_accessor :prepend_title
     config_accessor :append_title
+    config_accessor :store_seorel_if
 
     def param_name
       config.param_name.respond_to?(:call) ? config.param_name.call : config.param_name
@@ -42,5 +43,6 @@ module Seorel
     config.default_image = nil
     config.prepend_title = nil
     config.append_title  = nil
+    config.store_seorel_if = :empty
   end
 end
