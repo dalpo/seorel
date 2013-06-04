@@ -33,6 +33,7 @@ Seorel.configure do |config|
   # config.default_image = nil
   # config.prepend_title = nil
   # config.append_title  = nil
+  # config.store_seorel_if = :empty # Available values :empty | :changed
 end
 ```
 
