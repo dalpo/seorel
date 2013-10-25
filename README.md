@@ -8,7 +8,10 @@ Ruby on Rails SEO Metatags plugins for ActiveRecord models
 `Gemfile.rb`:
 
 ```ruby
-gem 'seorel', github: 'dalpo/seorel'
+gem 'seorel', '~> 0.0.2'
+
+# the edge version can be had using:
+# gem 'seorel', github: 'dalpo/seorel'
 ```
 
 `Console`:
