@@ -2,6 +2,8 @@
 
 Ruby on Rails SEO Metatags plugins for ActiveRecord models
 
+[![Gem Version](https://badge.fury.io/rb/seorel.png)](http://badge.fury.io/rb/seorel)
+
 ## Rails Setup
 
 
