@@ -28,7 +28,7 @@ module Seorel
       end
 
       def seorel_params
-        @seosel_metatags ||= ::Seorel::Controller::Params.new
+        @seosel_metatags ||= ::Seorel::Controller::Params.new(self)
       end
 
       def self.included(klass)
