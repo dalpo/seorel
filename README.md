@@ -99,6 +99,24 @@ class PostsController < ApplicationController
 end
 ```
 
+In case of missing `add_metatags` for controller actions, you can define metatags through I18n yaml translations
+
+For instance `seorel.en.yml`:
+
+```yaml
+# encoding: utf-8
+en:
+  seorel:
+    posts:
+      index:
+        title: "Listing posts metatitle"
+        description: "Listing posts metadescriprion"
+      history:
+        title: "Posts history metatitle"
+        description: "Posts history metadescriprion"
+```
+
+
 ### Views
 
 In your layout &lt;head&gt;&lt;/head&gt; section just call the `render_meta_tags` helper:
