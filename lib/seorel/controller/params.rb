@@ -15,15 +15,15 @@ module Seorel
       end
 
       def full_title
-        [default_options.prepend_title, self.title, default_options.append_title].compact.join
+        [default_options.prepend_title, self.title, default_options.append_title].compact.join.html_safe
       end
 
       def title
-        config.title || I18n.t(i18n_path(:title), default: default_options.default_title)
+        (config.title || I18n.t(i18n_path(:title), default: default_options.default_title)).html_safe
       end
 
       def description
-        config.description || I18n.t(i18n_path(:description), default: default_options.default_description)
+        (config.description || I18n.t(i18n_path(:description), default: default_options.default_description)).html_safe
       end
 
       def image
