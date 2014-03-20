@@ -27,7 +27,7 @@ module Seorel
     def render_twitter_cards
       [
         content_tag(:meta, nil, name: 'twitter:card', content: 'summary'),
-        content_tag(:meta, nil, name: 'twitter:url', content: url_for),
+        content_tag(:meta, nil, name: 'twitter:url', content: request.url),
         content_tag(:meta, nil, name: 'twitter:title', content: seorel_params.full_title),
         content_tag(:meta, nil, name: 'twitter:description', content: seorel_params.description),
         content_tag(:meta, nil, name: 'twitter:image', content: seorel_params.image)
