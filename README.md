@@ -11,7 +11,7 @@ Ruby on Rails SEO Metatags plugins for ActiveRecord models
 `Gemfile.rb`:
 
 ```ruby
-gem 'seorel', '~> 0.0.3'
+gem 'seorel', '~> 0.0.4'
 
 # the edge version can be had using:
 # gem 'seorel', github: 'dalpo/seorel'
@@ -147,7 +147,7 @@ Submitting a Pull Request:
 
 ## This project rocks and uses MIT-LICENSE.
 
-Copyright 2013 Andrea Dal Ponte
+Copyright 2014 Andrea Dal Ponte
 
 Permission is hereby granted, free of charge, to any person obtaining
 a copy of this software and associated documentation files (the
