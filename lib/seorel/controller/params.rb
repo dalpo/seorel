@@ -48,7 +48,6 @@ module Seorel
           key
         ].join('.')
       end
-
     end
   end
 end

@@ -11,7 +11,7 @@ Ruby on Rails SEO Metatags plugins for ActiveRecord models
 `Gemfile.rb`:
 
 ```ruby
-gem 'seorel', '~> 0.0.4'
+gem 'seorel', '~> 0.0.5'
 
 # the edge version can be had using:
 # gem 'seorel', github: 'dalpo/seorel'
@@ -103,7 +103,7 @@ class PostsController < ApplicationController
 end
 ```
 
-In case of missing `add_metatags` for controller actions, you can define metatags through rails `L10n` library by defining your locale strings for seorel.
+In case of missing `add_metatags` declaration in controller actions, you can define metatags through rails `L10n` library. Simply by defining your locale strings for seorel.
 
 For instance `seorel.en.yml`:
 
@@ -127,8 +127,11 @@ Where `posts` and `tags` are controller names, while `history` and `index` are t
 
 In your layout &lt;head&gt;&lt;/head&gt; section just call the `render_meta_tags` helper:
 
-```ruby
-<%=render_meta_tags %>
+```html
+<head>
+  <%=render_meta_tags %>
+  ...
+</head>
 ```
 
 
