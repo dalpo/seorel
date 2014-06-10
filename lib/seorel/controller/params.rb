@@ -41,7 +41,12 @@ module Seorel
       end
 
       def i18n_path(key)
-        "seorel.#{controller.controller_name}.#{controller.action_name}.#{key}"
+        [
+          'seorel',
+          controller.class.name.underscore,
+          controller.action_name,
+          key
+        ].join('.')
       end
 
     end
