@@ -2,17 +2,20 @@
 module Seorel
   module Model
     module InstanceMethods
-
       def seorel?
         self.try(:seorel).present?
       end
 
+      def seorel_changed_mode?
+        ::Seorel.config.store_seorel_if.eql?(:changed)
+      end
+
       def should_update_seo_title?
-        ::Seorel.config.store_seorel_if.eql?(:changed) || !self.seo_title?
+        self.seorel_changed_mode? || !self.seo_title?
       end
 
       def should_update_seo_description?
-        ::Seorel.config.store_seorel_if.eql?(:changed) || !self.seo_description?
+        self.seorel_changed_mode? || !self.seo_description?
       end
 
       def set_seorel
@@ -35,7 +38,6 @@ module Seorel
       def seorel_default_value?
         self.class.seorel_base_field.present?
       end
-
     end
   end
 end

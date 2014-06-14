@@ -2,10 +2,9 @@
 module Seorel
   module Model
     module Base
-
       def seorelify(*args)
-        include InstanceMethods
         extend  ClassMethods
+        include InstanceMethods
 
         cattr_accessor :seorel_title_field, :seorel_description_field, :seorel_image_field
 
@@ -20,13 +19,13 @@ module Seorel
         end
 
         has_one :seorel, as: :seorelable, dependent: :destroy, class_name: 'Seorel::Seorel'
-        accepts_nested_attributes_for :seorel, allow_destroy: false
+        accepts_nested_attributes_for :seorel, allow_destroy: true
+
+        delegate :title, :title?, :description, :description?, :image, :image?,
+          to: :seorel, prefix: :seo, allow_nil: true
 
         before_save :set_seorel
-
-        delegate :title, :title?, :description, :description?, :image, :image?, to: :seorel, prefix: :seo, allow_nil: true
       end
-
     end
   end
 end

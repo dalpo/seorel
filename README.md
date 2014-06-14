@@ -11,7 +11,7 @@ Ruby on Rails SEO Metatags plugins for ActiveRecord models
 `Gemfile.rb`:
 
 ```ruby
-gem 'seorel', '~> 0.0.5'
+gem 'seorel', '~> 0.1.0'
 
 # the edge version can be had using:
 # gem 'seorel', github: 'dalpo/seorel'
@@ -34,11 +34,16 @@ Will generate the `seorel_config.rb` initializer to customize the default values
 
 ```ruby
 Seorel.configure do |config|
+  # config.default_prepend_title = nil
   # config.default_title = nil
+  # config.default_append_title  = nil
+  #
+  # config.default_prepend_description = nil
   # config.default_description = nil
+  # config.default_append_description  = nil
+  #
   # config.default_image = nil
-  # config.prepend_title = nil
-  # config.append_title  = nil
+  #
   # config.store_seorel_if = :empty # Available values :empty | :changed
 end
 ```
@@ -92,7 +97,7 @@ class PostsController < ApplicationController
     @post = Post.find(params[:id])
     ###
     # Extract meta tags info from your Seorelified Model
-    add_metatags(@post)
+    add_metatags @post
 
     ...
   end
@@ -111,7 +116,20 @@ For instance `seorel.en.yml`:
 # encoding: utf-8
 en:
   seorel:
+    # controller_name:
+    #   action_name:
+    #     prepend_title: '...'
+    #     title: '...'
+    #     append_title: '...'
+    #
+    #     prepend_description: '...'
+    #     description: '...'
+    #     append_description: '...'
+
     posts:
+      show:
+        prepend_title: "Details for: "
+
       history:
         title: "Posts history metatitle"
         description: "Posts history metadescriprion"

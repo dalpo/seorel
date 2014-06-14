@@ -19,11 +19,16 @@ module Seorel
   class Configuration #:nodoc:
     include ActiveSupport::Configurable
 
+    config_accessor :default_prepend_title
     config_accessor :default_title
+    config_accessor :default_append_title
+
+    config_accessor :default_prepend_description
     config_accessor :default_description
+    config_accessor :default_append_description
+
     config_accessor :default_image
-    config_accessor :prepend_title
-    config_accessor :append_title
+
     config_accessor :store_seorel_if
 
     def param_name
@@ -36,13 +41,17 @@ module Seorel
     class_eval writer, __FILE__, line
   end
 
-  # this is ugly. why can't we pass the default value to config_accessor...?
   configure do |config|
+    config.default_prepend_title = nil
     config.default_title = nil
+    config.default_append_title  = nil
+
+    config.default_prepend_description = nil
     config.default_description = nil
+    config.default_append_description  = nil
+
     config.default_image = nil
-    config.prepend_title = nil
-    config.append_title  = nil
+
     config.store_seorel_if = :empty
   end
 end

@@ -14,40 +14,83 @@ module Seorel
         @controller = controller
       end
 
-      def full_title
-        [default_options.prepend_title, self.title, default_options.append_title].compact.join.html_safe
-      end
-
       def title
-        (config.title || I18n.t(i18n_path(:title), default: default_options.default_title)).html_safe
+        [
+          self.lookup_prepend_title,
+          self.base_title,
+          self.lookup_append_title
+        ].compact.join.html_safe
       end
 
       def description
-        (config.description || I18n.t(i18n_path(:description), default: default_options.default_description)).html_safe
+        [
+          self.lookup_prepend_description,
+          self.base_description,
+          self.lookup_append_description
+        ].compact.join.html_safe
       end
 
       def image
         config.image || default_options.default_image
       end
 
+      def base_title
+        (config.title || self.lookup_title).html_safe
+      end
+
+      def base_description
+        (config.description || self.lookup_description).html_safe
+      end
+
       def default_options
         ::Seorel.config
       end
 
-    protected
-
-      def controller
-        @controller
+      def lookup_i18n(key, default = nil)
+        I18n.t i18n_path(key), default: (default || '')
       end
 
-      def i18n_path(key)
-        [
-          'seorel',
-          controller.class.name.underscore,
-          controller.action_name,
-          key
-        ].join('.')
+      def lookup_prepend_title
+        lookup_i18n :prepend_title, default_options.default_prepend_title
       end
+
+      def lookup_title
+        lookup_i18n :title, default_options.default_title
+      end
+
+      def lookup_append_title
+        lookup_i18n :append_title, default_options.default_append_title
+      end
+
+      def lookup_prepend_description
+        lookup_i18n :prepend_description, default_options.default_prepend_description
+      end
+
+      def lookup_description
+        lookup_i18n :description, default_options.default_description
+      end
+
+      def lookup_append_description
+        lookup_i18n :append_description, default_options.default_append_description
+      end
+
+      protected
+
+        def controller
+          @controller
+        end
+
+        def controller_name
+          controller.class.name.underscore.gsub(/_controller$/, '')
+        end
+
+        def action_name
+          controller.action_name
+        end
+
+        def i18n_path(key)
+          ['seorel', self.controller_name, self.action_name, key].join('.')
+        end
     end
   end
 end
