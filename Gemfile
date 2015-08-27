@@ -13,7 +13,7 @@ gemspec
 # Git. Remember to move these dependencies to your gemspec before releasing
 # your gem to rubygems.org.
 
-group :development do
+group :debug do
   gem 'awesome_print', require: 'ap'
   gem 'pry-byebug'
   gem 'yard'
