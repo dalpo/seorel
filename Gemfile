@@ -13,8 +13,8 @@ gemspec
 # Git. Remember to move these dependencies to your gemspec before releasing
 # your gem to rubygems.org.
 
-# To use debugger
-# gem 'debugger'
-
-gem 'carrierwave'
-gem 'mini_magick'
+group :development do
+  gem 'awesome_print', require: 'ap'
+  gem 'pry-byebug'
+  gem 'yard'
+end

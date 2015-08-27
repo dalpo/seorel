@@ -1,7 +1,7 @@
-# encoding: utf-8
+require 'rails/engine'
+
 module Seorel
   class Engine < ::Rails::Engine
-
     isolate_namespace Seorel
 
     initializer 'Seorel Setup' do |app|
@@ -12,6 +12,5 @@ module Seorel
         ActionView::Base.send :include, ::Seorel::Helper
       end
     end
-
   end
 end

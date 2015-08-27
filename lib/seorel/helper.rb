@@ -1,7 +1,6 @@
 # encoding: utf-8
 module Seorel
   module Helper
-
     def render_meta_tags
       [render_title, render_description, render_open_graph, render_twitter_cards].join("\n").html_safe
     end
@@ -33,6 +32,5 @@ module Seorel
         content_tag(:meta, nil, name: 'twitter:image', content: seorel_params.image)
       ].join("\n").html_safe
     end
-
   end
 end
