@@ -1,7 +1,7 @@
 # encoding: utf-8
+
 module Seorel
   class Seorel < ActiveRecord::Base
-
     belongs_to :seorelable, polymorphic: true, touch: true
 
     def title?
@@ -19,6 +19,5 @@ module Seorel
     def image?
       false
     end
-
   end
 end
