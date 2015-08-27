@@ -4,6 +4,7 @@ Ruby on Rails SEO Metatags plugins for ActiveRecord models
 
 [![Gem Version](https://badge.fury.io/rb/seorel.png)](http://badge.fury.io/rb/seorel)
 [![Code Climate](https://codeclimate.com/github/dalpo/seorel.png)](https://codeclimate.com/github/dalpo/seorel)
+[![Build Status](https://travis-ci.org/dalpo/seorel.svg?branch=master)](https://travis-ci.org/dalpo/seorel)
 
 ## Rails Setup
 
@@ -61,14 +62,12 @@ rails generate model post title:string description:text, publish_date:date
 Edit `app/models/post.rb`:
 ```ruby
 class Post < ActiveRecord::Base
-
   extend Seorelify
   seorelify title: :customized_title, description: :description
 
   def customized_title
     "THE BLOG: #{self.title}"
   end
-
 end
 ```
 
