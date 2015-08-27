@@ -1,5 +1,5 @@
 class CreateSeorelSeorels < ActiveRecord::Migration
-  def change
+  def self.up
     create_table :seorel_seorels do |t|
       t.string :title
       t.string :description
@@ -12,5 +12,9 @@ class CreateSeorelSeorels < ActiveRecord::Migration
     add_index :seorel_seorels, :seorelable_id
     add_index :seorel_seorels, :seorelable_type
     add_index :seorel_seorels, [:seorelable_id, :seorelable_type]
+  end
+
+  def self.down
+    drop_table :seorel_seorels
   end
 end

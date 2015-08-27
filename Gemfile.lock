@@ -49,6 +49,7 @@ GEM
       columnize (= 0.9.0)
     coderay (1.1.0)
     columnize (0.9.0)
+    database_cleaner (1.4.1)
     diff-lcs (1.2.5)
     erubis (2.7.0)
     globalid (0.3.6)
@@ -143,6 +144,7 @@ PLATFORMS
 
 DEPENDENCIES
   awesome_print
+  database_cleaner
   pry-byebug
   rspec (~> 3.3.0)
   rspec-its
