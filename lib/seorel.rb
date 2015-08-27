@@ -5,6 +5,7 @@ end
 # Load Seorel components
 require 'seorel/config'
 require 'seorel/engine'
+require 'seorel/seorel'
 require 'seorel/model/base'
 require 'seorel/model/instance_methods'
 require 'seorel/model/class_methods'

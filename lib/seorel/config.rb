@@ -22,13 +22,10 @@ module Seorel
     config_accessor :default_prepend_title
     config_accessor :default_title
     config_accessor :default_append_title
-
     config_accessor :default_prepend_description
     config_accessor :default_description
     config_accessor :default_append_description
-
     config_accessor :default_image
-
     config_accessor :store_seorel_if
 
     def param_name
@@ -45,13 +42,10 @@ module Seorel
     config.default_prepend_title = nil
     config.default_title = nil
     config.default_append_title  = nil
-
     config.default_prepend_description = nil
     config.default_description = nil
     config.default_append_description  = nil
-
     config.default_image = nil
-
     config.store_seorel_if = :empty
   end
 end

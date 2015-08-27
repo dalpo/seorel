@@ -1,7 +1,7 @@
-# encoding: utf-8
+require 'active_record'
 
 module Seorel
-  class Seorel < ActiveRecord::Base
+  class Seorel < ::ActiveRecord::Base
     belongs_to :seorelable, polymorphic: true, touch: true
 
     def title?
@@ -12,12 +12,12 @@ module Seorel
       self.description.present?
     end
 
-    def admin_label
-      I18n.t("seorel.admin.label")
+    def image?
+      self.image.present?
     end
 
-    def image?
-      false
+    def admin_label
+      I18n.t("seorel.admin.label")
     end
   end
 end
