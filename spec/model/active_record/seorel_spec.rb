@@ -1,5 +1,5 @@
 require 'spec_helper'
 
-RSpec.describe Seorel do
+RSpec.describe Seorel::Seorel do
   pending 'write some specs'
 end

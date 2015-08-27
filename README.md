@@ -19,12 +19,12 @@ gem 'seorel', '~> 0.1.0'
 
 `Console`:
 ```bash
-% bundle install
-% bundle exec rake seorel:install:migrations
-% bundle exec rake db:migrate
+$ bundle install
+$ bundle exec rake seorel:install:migrations
+$ bundle exec rake db:migrate
 ```
 
-## Default configuration options
+## Generate configuration initializer for the default options
 
 ```bash
 % rails generate seorel:config
@@ -51,7 +51,7 @@ end
 
 ## Usage
 
-### Model
+### Sample model
 
 For instance generate a post model:
 ```ruby
