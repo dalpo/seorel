@@ -14,17 +14,18 @@ module Seorel
 
     def render_open_graph
       [
-        content_tag(:meta, nil, name: 'og:type', content: 'website'),
-        content_tag(:meta, nil, name: 'og:title', content: seorel_params.title),
-        content_tag(:meta, nil, name: 'og:description', content: seorel_params.description),
-        content_tag(:meta, nil, name: 'og:image', content: seorel_params.image),
-        content_tag(:meta, nil, name: 'og:locale', content: I18n.locale.to_s)
+        content_tag(:meta, nil, property: 'og:type', content: 'website'),
+        content_tag(:meta, nil, property: 'og:url', content: request.url),
+        content_tag(:meta, nil, property: 'og:title', content: seorel_params.title),
+        content_tag(:meta, nil, property: 'og:description', content: seorel_params.description),
+        content_tag(:meta, nil, property: 'og:image', content: seorel_params.image),
+        content_tag(:meta, nil, property: 'og:locale', content: I18n.locale.to_s)
       ].join("\n").html_safe
     end
 
     def render_twitter_cards
       [
-        content_tag(:meta, nil, name: 'twitter:card', content: 'summary'),
+        content_tag(:meta, nil, name: 'twitter:card', content: 'summary_large_image'),
         content_tag(:meta, nil, name: 'twitter:url', content: request.url),
         content_tag(:meta, nil, name: 'twitter:title', content: seorel_params.title),
         content_tag(:meta, nil, name: 'twitter:description', content: seorel_params.description),
