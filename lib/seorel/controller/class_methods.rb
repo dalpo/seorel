@@ -2,7 +2,6 @@
 module Seorel
   module Controller
     module ClassMethods
-
       def add_seorel_meta(values = {})
         class_name = self.name
 
@@ -10,7 +9,6 @@ module Seorel
           controller.send :add_meta, values
         end
       end
-
     end
   end
 end

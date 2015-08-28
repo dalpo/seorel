@@ -1,4 +1,3 @@
-# encoding: utf-8
 module Seorel
   module Helper
     def render_meta_tags
