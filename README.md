@@ -86,7 +86,8 @@ class PostsController < ApplicationController
     # Custom meta tags
     add_metatags({
       title: 'My custom meta title',
-      description: 'My custom meta description'
+      description: 'My custom meta description',
+      image: '/sample_image.png'
     })
 
     ...
