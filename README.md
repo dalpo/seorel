@@ -12,7 +12,7 @@ Ruby on Rails SEO Metatags plugins for ActiveRecord models
 `Gemfile.rb`:
 
 ```ruby
-gem 'seorel', '~> 0.2.1'
+gem 'seorel', '~> 0.2.2'
 
 # the edge version can be had using:
 # gem 'seorel', github: 'dalpo/seorel'
@@ -63,7 +63,7 @@ Edit `app/models/post.rb`:
 ```ruby
 class Post < ActiveRecord::Base
   extend Seorelify
-  seorelify title: :customized_title, description: :description
+  seorelify(title: :customized_title, description: :description, image: :share_image)
 
   def customized_title
     "THE BLOG: #{self.title}"
