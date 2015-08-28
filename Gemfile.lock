@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    seorel (0.2.0)
+    seorel (0.2.2)
       rails (>= 3.2)
 
 GEM
@@ -146,7 +146,7 @@ DEPENDENCIES
   awesome_print
   database_cleaner
   pry-byebug
-  rspec (~> 3.3.0)
+  rspec
   rspec-its
   rspec-rails
   seorel!

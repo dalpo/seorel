@@ -1,5 +1,10 @@
 module Seorel
   module Helper
+    def seorel_locale
+      locale = (I18n.locale.to_s.size == 2) ? "#{I18n.locale}_#{I18n.locale}" : I18n.locale.to_s
+      "#{locale[0..1].downcase}_#{locale[3..4].upcase}"
+    end
+
     def render_meta_tags
       [render_title, render_description, render_open_graph, render_twitter_cards].join("\n").html_safe
     end
@@ -19,7 +24,7 @@ module Seorel
         content_tag(:meta, nil, property: 'og:title', content: seorel_params.title),
         content_tag(:meta, nil, property: 'og:description', content: seorel_params.description),
         content_tag(:meta, nil, property: 'og:image', content: seorel_params.image),
-        content_tag(:meta, nil, property: 'og:locale', content: I18n.locale.to_s)
+        content_tag(:meta, nil, property: 'og:locale', content: seorel_locale)
       ].join("\n").html_safe
     end
 
