@@ -25,13 +25,9 @@ $ bundle exec rails generate seorel
 $ bundle exec rake db:migrate
 ```
 
-## Generate configuration initializer for the default options
+Will generate the `seorel.rb` initializer and a new migration.
 
-```bash
-% rails generate seorel:config
-```
-
-Will generate the `seorel_config.rb` initializer to customize the default values:
+You could change default meta tags values into the seorel initializer:
 
 ```ruby
 Seorel.configure do |config|
@@ -63,7 +59,9 @@ Edit `app/models/post.rb`:
 ```ruby
 class Post < ActiveRecord::Base
   extend Seorelify
-  seorelify(title: :customized_title, description: :description, image: :share_image)
+  seorelify title: :customized_title, description: :description, image: :share_image
+  # Or more simply:
+  # seorelify :customized_title, :description, :share_image
 
   def customized_title
     "THE BLOG: #{self.title}"
