@@ -21,7 +21,7 @@ gem 'seorel', '~> 0.2.2'
 `Console`:
 ```bash
 $ bundle install
-$ bundle exec rake seorel:install:migrations
+$ bundle exec rails generate seorel
 $ bundle exec rake db:migrate
 ```
 
