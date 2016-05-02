@@ -12,7 +12,7 @@ Ruby on Rails SEO Metatags plugins for ActiveRecord models
 `Gemfile.rb`:
 
 ```ruby
-gem 'seorel', '~> 0.2.3'
+gem 'seorel', '~> 0.3.0'
 
 # the edge version can be had using:
 # gem 'seorel', github: 'dalpo/seorel'
@@ -21,7 +21,7 @@ gem 'seorel', '~> 0.2.3'
 `Console`:
 ```bash
 $ bundle install
-$ bundle exec rails generate seorel
+$ bundle exec rails generate seorel:install
 $ bundle exec rake db:migrate
 ```
 
@@ -31,20 +31,27 @@ You could change default meta tags values into the seorel initializer:
 
 ```ruby
 Seorel.configure do |config|
+  config.default_title = 'My default page title goes here'
   # config.default_prepend_title = nil
-  # config.default_title = nil
-  # config.default_append_title  = nil
-  #
+  config.default_append_title  = ' / Every title will be appended with this string'
+
+  config.default_description = 'Lorem ipsum sit dolor...'
   # config.default_prepend_description = nil
-  # config.default_description = nil
   # config.default_append_description  = nil
-  #
-  # config.default_image = nil
-  #
+
+  config.default_image = 'http://www.example.com/share_image.png'
+
   # config.store_seorel_if = :empty # Available values :empty | :changed
+
+  config.default_og_metas = {
+    type: 'website'
+  }
+
+  config.default_twitter_metas = {
+    card: 'summary_large_image'
+  }
 end
 ```
-
 
 ## Usage
 
@@ -145,7 +152,7 @@ In your layout &lt;head&gt;&lt;/head&gt; section just call the `render_meta_tags
 
 ```html
 <head>
-  <%=render_meta_tags %>
+  <%= render_meta_tags %>
   ...
 </head>
 ```
@@ -166,7 +173,7 @@ Submitting a Pull Request:
 
 ## This project rocks and uses MIT-LICENSE.
 
-Copyright 2014 Andrea Dal Ponte
+Copyright 2016 Andrea Dal Ponte
 
 Permission is hereby granted, free of charge, to any person obtaining
 a copy of this software and associated documentation files (the
