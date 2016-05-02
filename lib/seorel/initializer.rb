@@ -11,4 +11,12 @@ Seorel.configure do |config|
   # config.default_image = nil
   #
   # config.store_seorel_if = :empty # Available values :empty | :changed
+
+  # config.default_og_metas = {
+  #   type: 'website'
+  # }
+
+  # config.default_twitter_metas = {
+  #   card: 'summary_large_image'
+  # }
 end
