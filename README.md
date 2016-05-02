@@ -2,8 +2,8 @@
 
 Ruby on Rails SEO Metatags plugins for ActiveRecord models
 
-[![Gem Version](https://badge.fury.io/rb/seorel.png)](http://badge.fury.io/rb/seorel)
-[![Code Climate](https://codeclimate.com/github/dalpo/seorel.png)](https://codeclimate.com/github/dalpo/seorel)
+[![Gem Version](https://badge.fury.io/rb/seorel.svg)](https://badge.fury.io/rb/seorel)
+[![Code Climate](https://codeclimate.com/github/dalpo/seorel/badges/gpa.svg)](https://codeclimate.com/github/dalpo/seorel)
 [![Build Status](https://travis-ci.org/dalpo/seorel.svg?branch=master)](https://travis-ci.org/dalpo/seorel)
 
 ## Rails Setup
