@@ -1,7 +1,12 @@
+# require 'action_view/helpers/tag_helper/capture_helper'
+# require 'action_view/helpers/tag_helper'
+
 # encoding: utf-8
 module Seorel
   module Helper
     class Base
+      # include ActionView::Helpers::TagHelper
+
       attr_reader :request, :params
 
       delegate :title, :description, :image, to: :params
@@ -11,9 +16,15 @@ module Seorel
         @params = params
       end
 
-      def content_tag(*args)
-        ActionView::Helpers::TagHelper.content_tag(*args)
+      def helpers
+        ActionController::Base.helpers
       end
+
+      alias_method :h, :helpers
+
+      # def h.content_tag(*args)
+      #   ActionView::Helpers::TagHelper.h.content_tag(*args)
+      # end
 
       def locale
         if I18n.locale.to_s.size == 2

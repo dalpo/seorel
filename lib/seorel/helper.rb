@@ -1,3 +1,5 @@
+require 'seorel/helper/manager'
+
 module Seorel
   module Helper
     def seorel_manager

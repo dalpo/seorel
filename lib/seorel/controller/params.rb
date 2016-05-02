@@ -10,7 +10,7 @@ module Seorel
       config_accessor :description
       config_accessor :image
 
-      def initialize(controller)
+      def initialize(controller = nil)
         @controller = controller
       end
 
@@ -38,7 +38,13 @@ module Seorel
         default_options.default_og_metas
       end
 
+      def twitter_extras
+        default_options.default_twitter_metas
+      end
+
       protected
+
+        attr_reader :controller
 
         def base_title
           (config.title || self.lookup_title).html_safe
@@ -80,16 +86,16 @@ module Seorel
           lookup_i18n :append_description, default_options.default_append_description
         end
 
-        def controller
-          @controller
-        end
-
         def controller_name
-          controller.class.name.underscore.gsub(/_controller$/, '')
+          if controller
+            controller.class.name.underscore.gsub(/_controller$/, '')
+          else
+            'undefined'
+          end
         end
 
         def action_name
-          controller.action_name
+          controller ? controller.action_name : 'undefined'
         end
 
         def i18n_path(key)

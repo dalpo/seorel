@@ -14,15 +14,15 @@ module Seorel
       end
 
       def generic
-        @generic ||= Seorel::Helper::Generic.new(request, params)
+        @generic ||= ::Seorel::Helper::Generic.new(request, params)
       end
 
       def open_graph
-        @open_graph ||= Seorel::Helper::OpenGraph.new(request, params)
+        @open_graph ||= ::Seorel::Helper::OpenGraph.new(request, params)
       end
 
       def twitter
-        @twitter ||= Seorel::Helper::Twitter.new(request, params)
+        @twitter ||= ::Seorel::Helper::Twitter.new(request, params)
       end
 
       def all
