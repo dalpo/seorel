@@ -6,9 +6,11 @@ require 'rails'
 require 'logger'
 require 'rspec'
 require 'rspec/its'
-require 'seorel'
 require 'database_cleaner'
+require 'simplecov'
+require 'seorel'
 require 'fake_app'
+
 
 # Require support libs
 Dir[File.expand_path('../support/**/*.rb', __FILE__)].each { |f| require f }
