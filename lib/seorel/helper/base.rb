@@ -34,6 +34,14 @@ module Seorel
         end
       end
 
+      def image_url
+        if /^(http|https|\/\/)/.match(image)
+          image
+        else
+          "#{request.protocol}#{request.host_with_port}#{image}"
+        end
+      end
+
       def all
         []
       end

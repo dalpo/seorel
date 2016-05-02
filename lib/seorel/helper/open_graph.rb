@@ -17,7 +17,7 @@ module Seorel
       end
 
       def image_tag
-        h.content_tag(:meta, nil, property: 'og:image', content: image) if image
+        h.content_tag(:meta, nil, property: 'og:image', content: image_url) if image
       end
 
       def url_tag

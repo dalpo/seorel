@@ -3,7 +3,7 @@ class Post < ActiveRecord::Base
 end
 
 # Migrations
-load Seorel::Engine.root.join('lib/seorel/migration.rb')
+load Seorel::Engine.root.join('lib/generators/seorel/templates/migration.rb')
 
 class CreateAllTables < ActiveRecord::Migration
   def self.up
