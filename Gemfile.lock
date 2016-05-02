@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    seorel (0.2.3)
+    seorel (0.3.0)
       rails (>= 3.2)
 
 GEM
