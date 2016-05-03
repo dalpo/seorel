@@ -18,3 +18,7 @@ group :debug do
   gem 'pry-byebug'
   gem 'yard'
 end
+
+group :test do
+  gem 'simplecov', '>= 0.9', require: false
+end

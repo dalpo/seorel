@@ -3,7 +3,7 @@ end
 
 ###
 # Load Seorel components
-require 'seorel/config'
+require 'seorel/configuration'
 require 'seorel/engine'
 require 'seorel/seorel'
 require 'seorel/model/base'
@@ -14,4 +14,3 @@ require 'seorel/controller/class_methods'
 require 'seorel/controller/params'
 require 'seorel/seorelify'
 require 'seorel/helper'
-

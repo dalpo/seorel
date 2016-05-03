@@ -1,0 +1,21 @@
+en:
+  seorel:
+    # Available keys:
+    #
+    # controller_name:
+    #   action_name:
+    #     prepend_title: '...'
+    #     title: '...'
+    #     append_title: '...'
+    #
+    #     prepend_description: '...'
+    #     description: '...'
+    #     append_description: '...'
+    #
+    #
+    # Example for a PostsController:
+    #
+    # posts:
+    #   index:
+    #     title: 'My title tag content for posts#index goes here'
+    #     description: 'My description meta tag content for posts#index goes here'
