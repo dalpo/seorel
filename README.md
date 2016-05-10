@@ -25,7 +25,9 @@ $ bundle exec rails generate seorel:install
 $ bundle exec rake db:migrate
 ```
 
-Will generate the `seorel.rb` initializer and a new migration.
+It will generate the `seorel.rb` initializer and a new migration.
+
+### Configurations
 
 You could change default meta tags values into the seorel initializer:
 
@@ -55,9 +57,10 @@ end
 
 ## Usage
 
-### Sample model
+### Usage with an active record model
 
-For instance generate a post model:
+Given a sample model Post:
+
 ```ruby
 rails generate model post title:string description:text, publish_date:date
 ```
