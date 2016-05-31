@@ -1,4 +1,4 @@
-class CreateSeorelSeorels < ActiveRecord::Migration
+class CreateSeorel < ActiveRecord::Migration
   def self.up
     create_table :seorel_seorels do |t|
       t.string :title
