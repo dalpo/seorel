@@ -2,7 +2,7 @@
 
 ## 0.4.0 (unreleased)
 
-* Add support for Globalize
+* Add support for Globalize [#5](https://github.com/dalpo/seorel/pull/5)
 
 ## 0.3.0 (2016-05-10)
 
