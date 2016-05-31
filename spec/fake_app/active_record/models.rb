@@ -16,5 +16,5 @@ class CreateAllTables < ActiveRecord::Migration
 end
 
 ActiveRecord::Migration.verbose = true
-CreateSeorelSeorels.up
+CreateSeorel.up
 CreateAllTables.up
