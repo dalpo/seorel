@@ -1,8 +1,9 @@
+# frozen_string_literal: true
+# encoding: utf-8
 require 'seorel/helper/generic'
 require 'seorel/helper/open_graph'
 require 'seorel/helper/twitter'
 
-# encoding: utf-8
 module Seorel
   module Helper
     class Manager

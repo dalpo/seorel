@@ -1,3 +1,4 @@
+# frozen_string_literal: true
 require 'globalize'
 require 'seorel/seorel'
 require 'active_support/concern'
