@@ -41,6 +41,8 @@ Seorel.configure do |config|
   # config.default_prepend_description = nil
   # config.default_append_description  = nil
 
+  config.default_keywords = 'RUBY ON RAILS,SEO,METATAGS'
+
   config.default_image = 'http://www.example.com/share_image.png'
 
   # config.store_seorel_if = :empty # Available values :empty | :changed
