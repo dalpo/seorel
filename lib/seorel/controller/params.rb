@@ -31,6 +31,10 @@ module Seorel
         ].compact.join.html_safe
       end
 
+      def keywords
+        default_options.default_keywords
+      end
+
       def image
         config.image || default_options.default_image
       end

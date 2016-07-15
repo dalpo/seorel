@@ -11,6 +11,7 @@ RSpec.describe Seorel::Helper::Manager do
     Seorel.configure do |config|
       config.default_title = 'Sample title'
       config.default_description = 'Sample description'
+      config.default_keywords = 'SEO,KEY'
 
       config.default_og_metas = {
         type: 'website'
@@ -31,6 +32,7 @@ RSpec.describe Seorel::Helper::Manager do
       expect(manager.render).to eq [
         "<title>Sample title</title>",
         "<meta name=\"description\" content=\"Sample description\"></meta>",
+        "<meta name=\"keywords\" content=\"SEO,KEY\"></meta>",
         "<meta property=\"og:title\" content=\"Sample title\"></meta>",
         "<meta property=\"og:description\" content=\"Sample description\"></meta>",
         "<meta property=\"og:locale\" content=\"en_EN\"></meta>",

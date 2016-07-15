@@ -13,10 +13,16 @@ module Seorel
         h.content_tag :meta, nil, name: 'description', content: params.description
       end
 
+      def keywords_tag
+        return if params.keywords.blank?
+        h.content_tag :meta, nil, name: 'keywords', content: params.keywords
+      end
+
       def all
         [
           title_tag,
-          description_tag
+          description_tag,
+          keywords_tag
         ].compact
       end
     end

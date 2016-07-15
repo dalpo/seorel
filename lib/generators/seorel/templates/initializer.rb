@@ -18,6 +18,11 @@ Seorel.configure do |config|
   # config.default_append_description  = nil
 
   ###
+  # Configure a default meta keywords:
+  #
+  # config.default_keywords = 'Ruby on Rails,Seorel,SEO'
+
+  ###
   # Configure a default share image:
   #
   # config.default_image = nil

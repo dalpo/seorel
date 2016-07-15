@@ -12,6 +12,7 @@ module Seorel
     config_accessor :default_prepend_description
     config_accessor :default_description
     config_accessor :default_append_description
+    config_accessor :default_keywords
     config_accessor :default_image
     config_accessor :store_seorel_if
     config_accessor :default_og_metas
@@ -33,6 +34,7 @@ module Seorel
       self.default_prepend_description = nil
       self.default_description = nil
       self.default_append_description  = nil
+      self.default_keywords = {}
       self.default_image = nil
       self.store_seorel_if = :empty
       self.default_og_metas = {}
