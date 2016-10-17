@@ -3,7 +3,7 @@ require 'active_record'
 
 module Seorel
   class Seorel < ::ActiveRecord::Base
-    belongs_to :seorelable, polymorphic: true, touch: true
+    belongs_to :seorelable, polymorphic: true, touch: true, inverse_of: :seorel
 
     def title?
       self.title.present?
