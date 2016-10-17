@@ -19,7 +19,12 @@ module Seorel
           class_variable_set '@@seorel_image_field',       args[2]
         end
 
-        has_one :seorel, as: :seorelable, dependent: :destroy, class_name: 'Seorel::Seorel'
+        has_one :seorel, as: :seorelable,
+                         dependent: :destroy,
+                         class_name: 'Seorel::Seorel',
+                         autosave: true,
+                         inverse_of: :seorelable
+
         accepts_nested_attributes_for :seorel, allow_destroy: true
 
         delegate :title, :title?, :description, :description?, :image, :image?,
