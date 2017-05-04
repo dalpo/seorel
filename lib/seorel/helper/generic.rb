@@ -10,12 +10,12 @@ module Seorel
       end
 
       def description_tag
-        h.tag :meta, nil, name: 'description', content: params.description
+        h.tag :meta, name: 'description', content: params.description
       end
 
       def keywords_tag
         return if params.keywords.blank?
-        h.tag :meta, nil, name: 'keywords', content: params.keywords
+        h.tag :meta, name: 'keywords', content: params.keywords
       end
 
       def all

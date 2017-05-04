@@ -6,23 +6,23 @@ module Seorel
   module Helper
     class OpenGraph < Base
       def title_tag
-        h.tag :meta, nil, property: 'og:title', content: title
+        h.tag :meta, property: 'og:title', content: title
       end
 
       def description_tag
-        h.tag :meta, nil, property: 'og:description', content: description
+        h.tag :meta, property: 'og:description', content: description
       end
 
       def locale_tag
-        h.tag(:meta, nil, property: 'og:locale', content: locale)
+        h.tag(:meta, property: 'og:locale', content: locale)
       end
 
       def image_tag
-        h.tag(:meta, nil, property: 'og:image', content: image_url) if image
+        h.tag(:meta, property: 'og:image', content: image_url) if image
       end
 
       def url_tag
-        h.tag(:meta, nil, property: 'og:url', content: request.url)
+        h.tag(:meta, property: 'og:url', content: request.url)
       end
 
       def custom_tags
@@ -44,7 +44,7 @@ module Seorel
       protected
 
       def custum_tag(key, value)
-        h.tag(:meta, nil, property: "og:#{key}", content: value)
+        h.tag(:meta, property: "og:#{key}", content: value)
       end
     end
   end

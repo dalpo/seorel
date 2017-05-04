@@ -6,19 +6,19 @@ module Seorel
   module Helper
     class Twitter < Base
       def title_tag
-        h.tag :meta, nil, name: 'twitter:title', content: title
+        h.tag :meta, name: 'twitter:title', content: title
       end
 
       def description_tag
-        h.tag :meta, nil, name: 'twitter:description', content: description
+        h.tag :meta, name: 'twitter:description', content: description
       end
 
       def image_tag
-        h.tag(:meta, nil, name: 'twitter:image', content: image_url) if image
+        h.tag(:meta, name: 'twitter:image', content: image_url) if image
       end
 
       def url_tag
-        h.tag(:meta, nil, name: 'twitter:url', content: request.url)
+        h.tag(:meta, name: 'twitter:url', content: request.url)
       end
 
       def custom_tags
@@ -39,7 +39,7 @@ module Seorel
       protected
 
       def custum_tag(key, value)
-        h.tag(:meta, nil, name: "twitter:#{key}", content: value)
+        h.tag(:meta, name: "twitter:#{key}", content: value)
       end
     end
   end
