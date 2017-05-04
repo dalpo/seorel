@@ -23,8 +23,8 @@ module Seorel
 
       alias_method :h, :helpers
 
-      # def h.content_tag(*args)
-      #   ActionView::Helpers::TagHelper.h.content_tag(*args)
+      # def h.tag(*args)
+      #   ActionView::Helpers::TagHelper.h.tag(*args)
       # end
 
       def locale
