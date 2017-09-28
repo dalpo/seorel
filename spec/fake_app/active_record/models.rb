@@ -5,7 +5,7 @@ end
 # Migrations
 load Seorel::Engine.root.join('lib/generators/seorel/templates/migration.rb')
 
-class CreateAllTables < ActiveRecord::Migration
+class CreateAllTables < ActiveRecord::Migration[4.2]
   def self.up
     create_table(:posts) do |t|
       t.string :title
