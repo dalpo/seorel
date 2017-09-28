@@ -1,6 +1,6 @@
 # Seorel Changelog
 
-## 0.4.0 (unreleased)
+## 0.4.0 (2017-09-28)
 
 * Fix stray end tag meta [04e979](https://github.com/dalpo/seorel/commit/f2057e782897daf7ab2b132374deec146b8e4631)
 
