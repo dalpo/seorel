@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+
 require 'active_record'
 
 module Seorel
@@ -6,19 +7,19 @@ module Seorel
     belongs_to :seorelable, polymorphic: true, touch: true, inverse_of: :seorel
 
     def title?
-      self.title.present?
+      title.present?
     end
 
     def description?
-      self.description.present?
+      description.present?
     end
 
     def image?
-      self.image.present?
+      image.present?
     end
 
     def admin_label
-      I18n.t("seorel.admin.label")
+      I18n.t('seorel.admin.label')
     end
   end
 end

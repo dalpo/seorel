@@ -1,5 +1,6 @@
 # frozen_string_literal: true
 # encoding: utf-8
+
 # require 'action_view/helpers/tag_helper/capture_helper'
 # require 'action_view/helpers/tag_helper'
 
@@ -21,7 +22,7 @@ module Seorel
         ActionController::Base.helpers
       end
 
-      alias_method :h, :helpers
+      alias h helpers
 
       # def h.tag(*args)
       #   ActionView::Helpers::TagHelper.h.tag(*args)

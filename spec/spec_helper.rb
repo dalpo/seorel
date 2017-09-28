@@ -11,7 +11,6 @@ require 'simplecov'
 require 'seorel'
 require 'fake_app'
 
-
 # Require support libs
 Dir[File.expand_path('../support/**/*.rb', __FILE__)].each { |f| require f }
 
@@ -23,8 +22,8 @@ Dir[File.expand_path('../support/**/*.rb', __FILE__)].each { |f| require f }
 #
 # See http://rubydoc.info/gems/rspec-core/RSpec/Core/Configuration
 RSpec.configure do |config|
-# The settings below are suggested to provide a good initial experience
-# with RSpec, but feel free to customize to your heart's content.
+  # The settings below are suggested to provide a good initial experience
+  # with RSpec, but feel free to customize to your heart's content.
 
   # These two settings work together to allow you to limit a spec run
   # to individual examples or groups you care about by tagging them with

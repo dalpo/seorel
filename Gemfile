@@ -1,4 +1,4 @@
-source "https://rubygems.org"
+source 'https://rubygems.org'
 
 # Declare your gem's dependencies in seorel.gemspec.
 # Bundler will treat runtime dependencies like base dependencies, and
@@ -20,5 +20,6 @@ group :debug do
 end
 
 group :test do
+  gem 'rubocop', '~> 0.50'
   gem 'simplecov', '>= 0.9', require: false
 end

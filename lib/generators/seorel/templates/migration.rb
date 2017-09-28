@@ -9,7 +9,7 @@ class CreateSeorel < ActiveRecord::Migration[4.2]
       t.timestamps
     end
 
-    add_index :seorel_seorels, [:seorelable_id, :seorelable_type]
+    add_index :seorel_seorels, %i[seorelable_id seorelable_type]
   end
 
   def self.down

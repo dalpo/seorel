@@ -1,5 +1,6 @@
 # frozen_string_literal: true
 # encoding: utf-8
+
 module Seorel
   module Controller
     module InstanceMethods
@@ -9,7 +10,7 @@ module Seorel
         elsif obj.respond_to? :seorel
           add_seorel_model obj
         else
-          raise "Seorel `add_seorel_meta` invalid argument"
+          raise 'Seorel `add_seorel_meta` invalid argument'
         end
       end
 

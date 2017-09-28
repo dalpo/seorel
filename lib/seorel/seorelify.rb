@@ -1,5 +1,6 @@
 # frozen_string_literal: true
 # encoding: utf-8
+
 module Seorelify
   def self.extended(model_class)
     return if model_class.respond_to? :seorel

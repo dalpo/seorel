@@ -5,7 +5,7 @@ RSpec.describe Seorel::Configuration do
     Seorel.reset!
   end
 
-  describe '#default_og_metas'  do
+  describe '#default_og_metas' do
     subject { Seorel.config.default_og_metas }
 
     context 'without any configuration' do
@@ -21,7 +21,7 @@ RSpec.describe Seorel::Configuration do
         end
       end
 
-      it { expect(Seorel.config.default_og_metas).to eq({ type: 'website' }) }
+      it { expect(Seorel.config.default_og_metas).to eq(type: 'website') }
     end
   end
 
@@ -41,7 +41,7 @@ RSpec.describe Seorel::Configuration do
         end
       end
 
-      it { is_expected.to eq({ card: 'summary_large_image' }) }
+      it { is_expected.to eq(card: 'summary_large_image') }
     end
   end
 end

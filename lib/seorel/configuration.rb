@@ -1,5 +1,6 @@
 # frozen_string_literal: true
 # encoding: utf-8
+
 require 'active_support/configurable'
 
 module Seorel
@@ -23,17 +24,18 @@ module Seorel
     end
 
     # define param_name writer (copied from AS::Configurable)
-    writer, line = 'def param_name=(value); config.param_name = value; end', __LINE__
+    writer = 'def param_name=(value); config.param_name = value; end'
+    line = __LINE__
     singleton_class.class_eval writer, __FILE__, line
     class_eval writer, __FILE__, line
 
     def initialize_defaults
       self.default_prepend_title = nil
       self.default_title = nil
-      self.default_append_title  = nil
+      self.default_append_title = nil
       self.default_prepend_description = nil
       self.default_description = nil
-      self.default_append_description  = nil
+      self.default_append_description = nil
       self.default_keywords = {}
       self.default_image = nil
       self.store_seorel_if = :empty
@@ -44,16 +46,14 @@ module Seorel
 
   # Global settings for Seorel
   def self.config
-    @config ||= ::Seorel::Configuration.new.tap do |conf|
-      conf.initialize_defaults
-    end
+    @config ||= ::Seorel::Configuration.new.tap(&:initialize_defaults)
   end
 
   # Configures global settings for Seorel
   #   Seorel.configure do |config|
   #     config.default_default_title = 'Default website title'
   #   end
-  def self.configure(&block)
+  def self.configure
     yield(config)
   end
 

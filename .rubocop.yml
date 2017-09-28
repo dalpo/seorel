@@ -1,0 +1,13 @@
+AllCops:
+  Include:
+    - '**/Rakefile'
+    - '**/config.ru'
+
+  Exclude:
+    - 'bin/**/*'
+    - 'coverage/**/*'
+    - 'db/**/*'
+    - 'config/**/*'
+    - !ruby/regexp /old_and_unused\.rb$/
+
+  TargetRubyVersion: 2.1

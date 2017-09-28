@@ -1,5 +1,6 @@
 # frozen_string_literal: true
 # encoding: utf-8
+
 module Seorel
   module Model
     module Base
@@ -28,7 +29,7 @@ module Seorel
         accepts_nested_attributes_for :seorel, allow_destroy: true
 
         delegate :title, :title?, :description, :description?, :image, :image?,
-          to: :seorel, prefix: :seo, allow_nil: true
+                 to: :seorel, prefix: :seo, allow_nil: true
 
         before_save :set_seorel
       end

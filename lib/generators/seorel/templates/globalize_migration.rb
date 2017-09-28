@@ -1,10 +1,10 @@
 class CreateSeorelTranslations < ActiveRecord::Migration
   def up
     Seorel::Seorel.create_translation_table!({
-      title: :string,
-      description: :string,
-      image: :string
-    }, { migrate_data: true })
+                                               title: :string,
+                                               description: :string,
+                                               image: :string
+                                             }, migrate_data: true)
   end
 
   def down

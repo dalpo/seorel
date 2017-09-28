@@ -1,5 +1,5 @@
 require 'rails/generators'
-require "rails/generators/active_record"
+require 'rails/generators/active_record'
 
 module Seorel
   # This generator adds a migration and aa configuration initializer
@@ -9,7 +9,7 @@ module Seorel
 
     class_option :'skip-migration',   type: :boolean, desc: "Don't generate a migration for the seorel table"
     class_option :'skip-initializer', type: :boolean, desc: "Don't generate an initializer"
-    class_option :'globalize', type: :boolean, desc: "Don't generate an initializer"
+    class_option :globalize, type: :boolean, desc: "Don't generate an initializer"
 
     source_root File.expand_path('../templates', __FILE__)
 
