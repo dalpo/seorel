@@ -18,6 +18,9 @@ module Seorel
     config_accessor :store_seorel_if
     config_accessor :default_og_metas
     config_accessor :default_twitter_metas
+    config_accessor :enable_pagination
+    config_accessor :pagination_format
+
 
     def param_name
       config.param_name.respond_to?(:call) ? config.param_name.call : config.param_name
@@ -41,6 +44,8 @@ module Seorel
       self.store_seorel_if = :empty
       self.default_og_metas = {}
       self.default_twitter_metas = {}
+      self.enable_pagination = false
+      self.pagination_format = ' - Pag. %page%' #TODO definire nome della variabile della paginazione
     end
   end
 
