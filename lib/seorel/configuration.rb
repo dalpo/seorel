@@ -46,7 +46,7 @@ module Seorel
       self.default_og_metas = {}
       self.default_twitter_metas = {}
       self.enable_pagination = false
-      self.pagination_format = ' - Pag. %page%' #TODO definire nome della variabile della paginazione
+      self.pagination_format = ' - Pag. %page%'
       self.pagination_parameter_name = 'page'
     end
   end
