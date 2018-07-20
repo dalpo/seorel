@@ -17,9 +17,9 @@ module Seorel
       end
 
       def eval_page
-        page_ = controller.params[:page]
+        page_ = controller.params.try(:[], "#{default_options.pagination_parameter_name}")
         page_string_ = default_options.pagination_format.gsub('%page%', page_) rescue ''
-        ( default_options.enable_pagination && page_.present? ) ? page_string_ : ''
+        ( default_options.enable_pagination && page_.present? ) ? page_string_ : '' rescue ''
       end
 
       def title

@@ -20,6 +20,7 @@ module Seorel
     config_accessor :default_twitter_metas
     config_accessor :enable_pagination
     config_accessor :pagination_format
+    config_accessor :pagination_parameter_name
 
 
     def param_name
@@ -46,6 +47,7 @@ module Seorel
       self.default_twitter_metas = {}
       self.enable_pagination = false
       self.pagination_format = ' - Pag. %page%' #TODO definire nome della variabile della paginazione
+      self.pagination_parameter_name = 'page'
     end
   end
 

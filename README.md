@@ -54,6 +54,10 @@ Seorel.configure do |config|
   config.default_twitter_metas = {
     card: 'summary_large_image'
   }
+  
+  # config.enable_pagination = true
+  # config.pagination_format = ' - Pag. %page%'
+  # config.pagination_parameter_name = 'page'
 end
 ```
 
