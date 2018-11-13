@@ -16,17 +16,17 @@ module Seorel
         @controller = controller
       end
 
-      def eval_page
-        page_ = controller.params.try(:[], "#{default_options.pagination_parameter_name}")
-        page_string_ = default_options.pagination_format.gsub('%page%', page_) rescue ''
-        ( default_options.enable_pagination && page_.present? ) ? page_string_ : '' rescue ''
+      def page_text
+        return unless available_pagination?
+
+        default_options.pagination_format.gsub('%page%', pagination_page)
       end
 
       def title
         [
           lookup_prepend_title,
           base_title,
-          eval_page,
+          page_text,
           lookup_append_title
         ].compact.join.html_safe
       end
@@ -35,7 +35,7 @@ module Seorel
         [
           lookup_prepend_description,
           base_description,
-          eval_page,
+          page_text,
           lookup_append_description
         ].compact.join.html_safe
       end
@@ -59,6 +59,17 @@ module Seorel
       protected
 
       attr_reader :controller
+
+      delegate :params, to: :controller, allow_nil: true
+
+      def pagination_page
+        return unless controller
+        params.try(:[], default_options.pagination_parameter_name.to_s)
+      end
+
+      def available_pagination?
+        default_options.enable_pagination && pagination_page
+      end
 
       def base_title
         (config.title || lookup_title).html_safe

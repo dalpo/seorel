@@ -1,13 +1,10 @@
 language: ruby
 
 rvm:
-  - 2.0.0
-  - 2.1.9
-  - 2.2.5
-  - 2.3.4
-  - 2.4.2
+  - 2.3.8
+  - 2.4.5
+  - 2.5.3
   - jruby
-  - ruby-head
 
 bundler_args: '--without debug'
 
@@ -18,6 +15,5 @@ sudo: false
 matrix:
   allow_failures:
     - rvm: jruby
-    - rvm: ruby-head
 
 script: bundle exec rake

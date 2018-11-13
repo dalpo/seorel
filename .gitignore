@@ -8,3 +8,4 @@ test/dummy/.sass-cache
 *.gem
 spec/log/
 coverage/
+Gemfile.lock
